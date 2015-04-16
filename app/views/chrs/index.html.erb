@@ -1,0 +1,12 @@
+<% provide(:title, 'All chrs') %>
+<h1>All chrs</h1>
+
+<%= will_paginate %>
+
+<ul class="chrs">
+  <%= render @chrs %>
+</ul>
+
+<%= will_paginate %>
+
+<%= link_to "Create new chr", new_chr_path, class: "btn btn-primary" %>

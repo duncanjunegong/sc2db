@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  overall_length: 1
+  synstart: 1
+  synend: 1
+  introduction: MyText
+
+two:
+  name: MyString
+  overall_length: 1
+  synstart: 1
+  synend: 1
+  introduction: MyText

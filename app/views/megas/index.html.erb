@@ -1,0 +1,12 @@
+<% provide(:title, 'All megas') %>
+<h1>All megas</h1>
+
+<%= will_paginate %>
+
+<ul class="megas">
+  <%= render @megas %>
+</ul>
+
+<%= will_paginate %>
+
+<%= link_to "Create new mega", new_mega_path, class: "btn btn-primary" %>

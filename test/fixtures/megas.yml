@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  synstart: 1
+  synend: 1
+  marker: 1
+  introduction: MyText
+
+two:
+  name: MyString
+  synstart: 1
+  synend: 1
+  marker: 1
+  introduction: MyText

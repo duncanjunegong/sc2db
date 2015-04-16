@@ -1,0 +1,12 @@
+<% provide(:title, 'All chunks') %>
+<h1>All chunks</h1>
+
+<%= will_paginate %>
+
+<ul class="chunks">
+  <%= render @chunks %>
+</ul>
+
+<%= will_paginate %>
+
+<%= link_to "Create new chunk", new_chunk_path, class: "btn btn-primary" %>

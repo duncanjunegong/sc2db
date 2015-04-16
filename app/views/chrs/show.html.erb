@@ -1,0 +1,23 @@
+<% provide(:title, @chr.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="chr_info">
+      <h1>
+        <%= @chr.name %>
+      </h1>
+    </section>
+  </aside>
+</div>
+<%= @chr.ctype %>
+<br/>
+<%= @chr.length %>
+<br/>
+<%= @chr.manipulation %>
+<br/>
+<%= @chr.version %>
+<br/>
+<%= @chr.latest_flag %>
+<br/>
+<%= @chr.introduction %>
+<br/>
+<%= link_to "Megas", controller: "megas", action: "index", params: { :chr_id => @chr.id } %>

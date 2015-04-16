@@ -1,0 +1,32 @@
+<% provide(:title, 'Create chrs') %>
+<h1>Create chrs</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@chr) do |f| %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :ctype %>
+      <%= f.select :ctype, Chr.ctypes.collect { |p| p }, class: 'form-control' %>
+
+      <%= f.label :length %>
+      <%= f.text_field :length, class: 'form-control' %>
+
+      <%= f.label :manipulation %>
+      <%= f.select :manipulation, Chr.manipulations.collect { |p| p }, class: 'form-control' %>
+
+      <%= f.label :version %>
+      <%= f.text_field :version, class: 'form-control' %>
+
+      <%= f.label :introduction %>
+      <%= f.text_field :introduction, class: 'form-control' %>
+
+      <%= f.label :latest? %>
+      <%= f.check_box :latest_flag %>
+
+      <%= f.submit "Create new chr", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

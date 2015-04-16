@@ -1,0 +1,12 @@
+<% provide(:title, 'All minis') %>
+<h1>All minis</h1>
+
+<%= will_paginate %>
+
+<ul class="minis">
+  <%= render @minis %>
+</ul>
+
+<%= will_paginate %>
+
+<%= link_to "Create new mini", new_mini_path, class: "btn btn-primary" %>

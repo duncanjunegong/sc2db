@@ -11,16 +11,76 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150402132644) do
+ActiveRecord::Schema.define(version: 20150410030145) do
+
+  create_table "chr_mega_relations", force: :cascade do |t|
+    t.string   "chr_id"
+    t.string   "mega_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "chrs", force: :cascade do |t|
+    t.string   "name",         default: "chr_"
+    t.integer  "ctype"
+    t.integer  "length"
+    t.integer  "manipulation"
+    t.integer  "version"
+    t.boolean  "latest_flag",  default: true
+    t.text     "introduction"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  add_index "chrs", ["name"], name: "index_chrs_on_name"
+
+  create_table "chunks", force: :cascade do |t|
+    t.string   "name",           default: "chunk_"
+    t.integer  "overall_length"
+    t.integer  "synstart"
+    t.integer  "synend"
+    t.text     "introduction"
+    t.boolean  "latest_flag",    default: true
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+  end
+
+  create_table "megas", force: :cascade do |t|
+    t.string   "name",         default: "mega_"
+    t.integer  "synstart"
+    t.integer  "synend"
+    t.integer  "marker"
+    t.text     "introduction"
+    t.boolean  "latest_flag",  default: true
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
+
+  add_index "megas", ["name"], name: "index_megas_on_name"
+
+  create_table "minis", force: :cascade do |t|
+    t.string   "name",         default: "mini_"
+    t.integer  "synstart"
+    t.integer  "synend"
+    t.text     "sequence"
+    t.integer  "ctype"
+    t.text     "introduction"
+    t.boolean  "latest_flag",  default: true
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.string   "password_digest"
     t.string   "remember_digest"
-    t.boolean  "admin",           default: false
+    t.boolean  "admin",             default: false
+    t.string   "activation_digest"
+    t.boolean  "activated",         default: false
+    t.datetime "activated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
