@@ -1,3 +1,7 @@
 <li>
   <%= link_to chunk.name, chunk %>
+  <%# if current_user.admin? && !current_user?(user) %>
+    | <%= link_to "delete", chunk, method: :delete,
+                              date: { confirm: "You sure?" } %>
+  <%# end %>
 </li>

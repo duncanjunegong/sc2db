@@ -6,18 +6,21 @@
         <%= @chr.name %>
       </h1>
     </section>
+    <%= @chr.ctype %>
+    <br/>
+    <%= @chr.length %>
+    <br/>
+    <%= @chr.manipulation %>
+    <br/>
+    <%= @chr.version %>
+    <br/>
+    <%= @chr.latest_flag %>
+    <br/>
+    <%= @chr.introduction %>
+    <br/>
+    </section>
   </aside>
 </div>
-<%= @chr.ctype %>
-<br/>
-<%= @chr.length %>
-<br/>
-<%= @chr.manipulation %>
-<br/>
-<%= @chr.version %>
-<br/>
-<%= @chr.latest_flag %>
-<br/>
-<%= @chr.introduction %>
+<%= link_to "Edit", edit_chr_path %>
 <br/>
 <%= link_to "Megas", controller: "megas", action: "index", params: { :chr_id => @chr.id } %>

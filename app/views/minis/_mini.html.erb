@@ -1,3 +1,7 @@
 <li>
   <%= link_to mini.name, mini %>
+  <%# if current_user.admin? && !current_user?(user) %>
+    | <%= link_to "delete", mini, method: :delete,
+                              date: { confirm: "You sure?" } %>
+  <%# end %>
 </li>

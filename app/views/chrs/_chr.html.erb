@@ -1,5 +1,7 @@
 <li>
   <%= link_to chr.name, chr %>
-  <%= link_to "delete", chr, method: :delete,
+  <%# if current_user.admin? && !current_user?(user) %>
+    | <%= link_to "delete", chr, method: :delete,
                               date: { confirm: "You sure?" } %>
+  <%# end %>
 </li>

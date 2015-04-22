@@ -6,5 +6,18 @@
         <%= @mega.name %>
       </h1>
     </section>
+    <%= @mega.synstart %>
+    <br/>
+    <%= @mega.synend %>
+    <br/>
+    <%= @mega.marker %>
+    <br/>
+    <%= @mega.latest_flag %>
+    <br/>
+    <%= @mega.introduction %>
+    <br/>
   </aside>
 </div>
+<%= link_to "Edit", edit_mega_path %>
+<br/>
+<%= link_to "Chunks", controller: "chunks", action: "index", params: { :mega_id => @mega.id } %>

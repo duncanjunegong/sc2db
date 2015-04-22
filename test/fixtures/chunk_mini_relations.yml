@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  chunk_id: 1
+  mini_id: 1
+
+two:
+  chunk_id: 1
+  mini_id: 1

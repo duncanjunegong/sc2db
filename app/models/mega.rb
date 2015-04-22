@@ -5,4 +5,7 @@ class Mega < ActiveRecord::Base
   has_many :chr_mega_relations
   has_many :chrs, through: :chr_mega_relations
 
+  has_many :mega_chunk_relations
+  has_many :chunks, through: :mega_chunk_relations
+
 end

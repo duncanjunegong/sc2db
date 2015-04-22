@@ -6,5 +6,18 @@
         <%= @chunk.name %>
       </h1>
     </section>
+    <%= @chunk.overall_length %>
+    <br/>
+    <%= @chunk.synstart %>
+    <br/>
+    <%= @chunk.synend %>
+    <br/>
+    <%= @chunk.introduction %>
+    <br/>
+    <%= @chunk.latest_flag %>
+    <br/>
   </aside>
 </div>
+<%= link_to "Edit", edit_chunk_path %>
+<br/>
+<%= link_to "Minis", controller: "minis", action: "index", params: { :chunk_id => @chunk.id } %>

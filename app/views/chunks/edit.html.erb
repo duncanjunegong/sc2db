@@ -1,2 +1,31 @@
-<h1>Chunks#edit</h1>
-<p>Find me in app/views/chunks/edit.html.erb</p>
+<%= provide(:title, "Edit chunk") %>
+<h1>Edit chunk</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@chunk) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :overall_length %>
+      <%= f.text_field :overall_length, class: 'form-control' %>
+      
+      <%= f.label :synstart %>
+      <%= f.text_field :synstart, class: 'form-control' %>
+      
+      <%= f.label :synend %>
+      <%= f.text_field :synend, class: 'form-control' %>
+
+      <%= f.label :introduction %>
+      <%= f.text_field :introduction, class: 'form-control' %>
+
+      <%= f.label :latest? %>
+      <%= f.check_box :latest_flag %>
+
+      <%= f.submit "Save changes", class: "btn btn-primary" %>
+    <% end %>
+
+  </div>
+</div>
